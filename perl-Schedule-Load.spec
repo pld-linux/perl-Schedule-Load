@@ -9,7 +9,7 @@ Summary:	Schedule::Load - Load distribution and status across multiple host mach
 Summary(pl):	Schedule::Load - rozk³adanie i badanie obci±¿enia dla wielu maszyn
 Name:		perl-Schedule-Load
 Version:	2.102
-Release:	1
+Release:	2
 License:	GPL/Artistic
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-module/%{pdir}/%{pdir}-%{pnam}-%{version}.tar.gz
@@ -19,7 +19,7 @@ BuildRequires:	perl-Proc-ProcessTable
 BuildRequires:	perl-Time-HiRes
 BuildRequires:	perl-Unix-Processors >= 1.7
 %endif
-BuildRequires:	rpm-perlprov >= 3.0.3-26
+BuildRequires:	rpm-perlprov >= 4.1-13
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -38,7 +38,8 @@ rhosts.
 %setup -q -n %{pdir}-%{pnam}-%{version}
 
 %build
-%{__perl} Makefile.PL
+%{__perl} Makefile.PL \
+	INSTALLDIRS=vendor 
 %{__make}
 
 find -type f -perm +100 | xargs perl -pi -e 's,/usr/local/bin/perl,/usr/bin/perl,'
@@ -60,14 +61,14 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc NEWS README
-%{perl_sitelib}/Schedule/*.pm
-%{perl_sitelib}/Schedule/Load
-%dir %{perl_sitelib}/auto/Schedule/Load
-%dir %{perl_sitelib}/auto/Schedule/Load/Hosts
+%{perl_vendorlib}/Schedule/*.pm
+%{perl_vendorlib}/Schedule/Load
+%dir %{perl_vendorlib}/auto/Schedule/Load
+%dir %{perl_vendorlib}/auto/Schedule/Load/Hosts
 # empty autosplit.ix files
-#%dir %{perl_sitelib}/auto/Schedule/Load/Hosts/Host
-#%%{perl_sitelib}/auto/Schedule/Load/Hosts/Host/autosplit.ix
-#%dir %{perl_sitelib}/auto/Schedule/Load/Hosts/Proc
-#%%{perl_sitelib}/auto/Schedule/Load/Hosts/Proc/autosplit.ix
+#%dir %{perl_vendorlib}/auto/Schedule/Load/Hosts/Host
+#%%{perl_vendorlib}/auto/Schedule/Load/Hosts/Host/autosplit.ix
+#%dir %{perl_vendorlib}/auto/Schedule/Load/Hosts/Proc
+#%%{perl_vendorlib}/auto/Schedule/Load/Hosts/Proc/autosplit.ix
 %{_bindir}/*
 %{_mandir}/man?/*
