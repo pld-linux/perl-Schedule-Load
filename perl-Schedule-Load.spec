@@ -66,8 +66,8 @@ rm -rf $RPM_BUILD_ROOT
 %dir %{perl_sitelib}/auto/Schedule/Load/Hosts
 # empty autosplit.ix files
 #%dir %{perl_sitelib}/auto/Schedule/Load/Hosts/Host
-#%{perl_sitelib}/auto/Schedule/Load/Hosts/Host/autosplit.ix
+#%%{perl_sitelib}/auto/Schedule/Load/Hosts/Host/autosplit.ix
 #%dir %{perl_sitelib}/auto/Schedule/Load/Hosts/Proc
-#%{perl_sitelib}/auto/Schedule/Load/Hosts/Proc/autosplit.ix
+#%%{perl_sitelib}/auto/Schedule/Load/Hosts/Proc/autosplit.ix
 %{_bindir}/*
 %{_mandir}/man?/*
