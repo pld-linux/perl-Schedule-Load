@@ -9,15 +9,14 @@ Summary:	Schedule::Load - load distribution and status across multiple host mach
 Summary(pl):	Schedule::Load - rozk³adanie i badanie obci±¿enia dla wielu maszyn
 Name:		perl-Schedule-Load
 Version:	2.102
-Release:	2
-License:	GPL/Artistic
+Release:	3
+License:	GPL or Artistic
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-module/%{pdir}/%{pdir}-%{pnam}-%{version}.tar.gz
 # Source0-md5:	a63ef8d71bc7db34654b48aee0d12467
 BuildRequires:	perl-devel >= 1:5.8.0
 %if %{with tests}
 BuildRequires:	perl-Proc-ProcessTable
-BuildRequires:	perl-Time-HiRes
 BuildRequires:	perl-Unix-Processors >= 1.7
 %endif
 BuildRequires:	rpm-perlprov >= 4.1-13
