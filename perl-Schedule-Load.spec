@@ -1,6 +1,7 @@
 #
 # Conditional build:
 # _without_tests - do not perform "make test"
+#
 %include	/usr/lib/rpm/macros.perl
 %define	pdir	Schedule
 %define	pnam	Load
@@ -8,7 +9,7 @@ Summary:	Schedule::Load - Load distribution and status across multiple host mach
 Summary(pl):	Schedule::Load - rozk³adanie i badanie obci±¿enia dla wielu maszyn
 Name:		perl-Schedule-Load
 Version:	2.100
-Release:	1
+Release:	2
 License:	GPL/Artistic
 Group:		Development/Languages/Perl
 Source0:	ftp://ftp.cpan.org/pub/CPAN/modules/by-module/%{pdir}/%{pdir}-%{pnam}-%{version}.tar.gz
@@ -59,7 +60,13 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc NEWS README
-%{perl_sitelib}/%{pdir}/*.pm
-%{perl_sitelib}/%{pdir}/%{pnam}
+%{perl_sitelib}/Schedule/*.pm
+%{perl_sitelib}/Schedule/Load
+%dir %{perl_sitelib}/Schedule/Load
+%dir %{perl_sitelib}/Schedule/Load/Hosts
+%dir %{perl_sitelib}/Schedule/Load/Hosts/Host
+%{perl_sitelib}/auto/Schedule/Load/Hosts/Host/autosplit.ix
+%dir %{perl_sitelib}/Schedule/Load/Hosts/Proc
+%{perl_sitelib}/auto/Schedule/Load/Hosts/Proc/autosplit.ix
 %{_bindir}/*
 %{_mandir}/man?/*
