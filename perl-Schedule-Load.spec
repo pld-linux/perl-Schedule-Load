@@ -8,8 +8,8 @@
 Summary:	Schedule::Load - Load distribution and status across multiple host machines
 Summary(pl):	Schedule::Load - rozk³adanie i badanie obci±¿enia dla wielu maszyn
 Name:		perl-Schedule-Load
-Version:	2.100
-Release:	2
+Version:	2.102
+Release:	1
 License:	GPL/Artistic
 Group:		Development/Languages/Perl
 Source0:	ftp://ftp.cpan.org/pub/CPAN/modules/by-module/%{pdir}/%{pdir}-%{pnam}-%{version}.tar.gz
@@ -64,9 +64,10 @@ rm -rf $RPM_BUILD_ROOT
 %{perl_sitelib}/Schedule/Load
 %dir %{perl_sitelib}/auto/Schedule/Load
 %dir %{perl_sitelib}/auto/Schedule/Load/Hosts
-%dir %{perl_sitelib}/auto/Schedule/Load/Hosts/Host
-%{perl_sitelib}/auto/Schedule/Load/Hosts/Host/autosplit.ix
-%dir %{perl_sitelib}/auto/Schedule/Load/Hosts/Proc
-%{perl_sitelib}/auto/Schedule/Load/Hosts/Proc/autosplit.ix
+# empty autosplit.ix files
+#%dir %{perl_sitelib}/auto/Schedule/Load/Hosts/Host
+#%{perl_sitelib}/auto/Schedule/Load/Hosts/Host/autosplit.ix
+#%dir %{perl_sitelib}/auto/Schedule/Load/Hosts/Proc
+#%{perl_sitelib}/auto/Schedule/Load/Hosts/Proc/autosplit.ix
 %{_bindir}/*
 %{_mandir}/man?/*
