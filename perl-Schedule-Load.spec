@@ -19,7 +19,7 @@ BuildRequires:	perl-Proc-ProcessTable
 BuildRequires:	perl-Time-HiRes
 BuildRequires:	perl-Unix-Processors >= 1.7
 %endif
-BuildRequires:	rpm-perlprov >= 3.0.3-26
+BuildRequires:	rpm-perlprov >= 4.0.2-104
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
