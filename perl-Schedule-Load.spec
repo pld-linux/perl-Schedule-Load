@@ -1,6 +1,6 @@
 #
 # Conditional build:
-# _without_tests - do not perform "make test"
+%bcond_without	tests	# do not perform "make test"
 #
 %include	/usr/lib/rpm/macros.perl
 %define	pdir	Schedule
@@ -15,7 +15,7 @@ Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-module/%{pdir}/%{pdir}-%{pnam}-%{version}.tar.gz
 # Source0-md5:	a63ef8d71bc7db34654b48aee0d12467
 BuildRequires:	perl-devel >= 5.6
-%if %{?_without_tests:0}%{!?_without_tests:1}
+%if %{with tests}
 BuildRequires:	perl-Proc-ProcessTable
 BuildRequires:	perl-Time-HiRes
 BuildRequires:	perl-Unix-Processors >= 1.7
@@ -45,7 +45,7 @@ rhosts.
 
 find -type f -perm +100 | xargs perl -pi -e 's,/usr/local/bin/perl,/usr/bin/perl,'
 
-%if %{?_without_tests:0}%{!?_without_tests:1}
+%if %{with tests}
 %{__make} test
 killall slreportd || true
 killall slchoosed || true
@@ -54,7 +54,8 @@ killall slchoosed || true
 %install
 rm -rf $RPM_BUILD_ROOT
 
-%{__make} install DESTDIR=$RPM_BUILD_ROOT
+%{__make} install \
+	DESTDIR=$RPM_BUILD_ROOT
 
 %clean
 rm -rf $RPM_BUILD_ROOT
