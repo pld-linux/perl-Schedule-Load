@@ -5,7 +5,7 @@
 %define	pdir	Schedule
 %define	pnam	Load
 Summary:	Schedule::Load - Load distribution and status across multiple host machines
-#Summary(pl):	
+Summary(pl):	Schedule::Load - rozk³adanie i badanie obci±¿enia dla wielu maszyn
 Name:		perl-Schedule-Load
 Version:	2.100
 Release:	1
@@ -13,22 +13,25 @@ License:	GPL/Artistic
 Group:		Development/Languages/Perl
 Source0:	ftp://ftp.cpan.org/pub/CPAN/modules/by-module/%{pdir}/%{pdir}-%{pnam}-%{version}.tar.gz
 BuildRequires:	perl >= 5.6
-BuildRequires:	rpm-perlprov >= 3.0.3-26
 %if %{?_without_tests:0}%{!?_without_tests:1}
 BuildRequires:	perl-Proc-ProcessTable
 BuildRequires:	perl-Time-HiRes
 BuildRequires:	perl-Unix-Processors >= 1.7
 %endif
+BuildRequires:	rpm-perlprov >= 3.0.3-26
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
-This package provides useful utilities for load distribution and status
-across multiple machines in a network.  To just see what is up in the
-network, see the C<rschedule> or C<rtop>, C<rloads> or C<rhosts> commands.
+This package provides useful utilities for load distribution and
+status across multiple machines in a network. To just see what is up
+in the network, see the rschedule or rtop, rloads or rhosts commands.
 
-# %description -l pl
-# TODO
+%description -l pl
+Ten pakiet udostêpnia przydatne narzêdzia do rozk³adania obci±¿enia i
+jego badania na wielu maszynach w sieci. Aby zobaczyæ co siê dzieje w
+sieci, wystarczy popatrzeæ na polecenia rschedule, rtop, rloads i
+rhosts.
 
 %prep
 %setup -q -n %{pdir}-%{pnam}-%{version}
