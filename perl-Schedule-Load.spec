@@ -62,11 +62,11 @@ rm -rf $RPM_BUILD_ROOT
 %doc NEWS README
 %{perl_sitelib}/Schedule/*.pm
 %{perl_sitelib}/Schedule/Load
-%dir %{perl_sitelib}/Schedule/Load
-%dir %{perl_sitelib}/Schedule/Load/Hosts
-%dir %{perl_sitelib}/Schedule/Load/Hosts/Host
+%dir %{perl_sitelib}/auto/Schedule/Load
+%dir %{perl_sitelib}/auto/Schedule/Load/Hosts
+%dir %{perl_sitelib}/auto/Schedule/Load/Hosts/Host
 %{perl_sitelib}/auto/Schedule/Load/Hosts/Host/autosplit.ix
-%dir %{perl_sitelib}/Schedule/Load/Hosts/Proc
+%dir %{perl_sitelib}/auto/Schedule/Load/Hosts/Proc
 %{perl_sitelib}/auto/Schedule/Load/Hosts/Proc/autosplit.ix
 %{_bindir}/*
 %{_mandir}/man?/*
