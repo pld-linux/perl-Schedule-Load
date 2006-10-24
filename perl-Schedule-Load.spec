@@ -8,18 +8,22 @@
 Summary:	Schedule::Load - load distribution and status across multiple host machines
 Summary(pl):	Schedule::Load - rozk³adanie i badanie obci±¿enia dla wielu maszyn
 Name:		perl-Schedule-Load
-Version:	2.102
-Release:	3
+Version:	3.040
+Release:	1
 License:	GPL or Artistic
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-module/%{pdir}/%{pdir}-%{pnam}-%{version}.tar.gz
-# Source0-md5:	a63ef8d71bc7db34654b48aee0d12467
+# Source0-md5:	b66fd3df5fcbbcd083eb120ad98f15eb
 BuildRequires:	perl-devel >= 1:5.8.0
 %if %{with tests}
-BuildRequires:	perl-Proc-ProcessTable
-BuildRequires:	perl-Unix-Processors >= 1.7
+BuildRequires:	perl-IPC-Locker >= 1.410
+BuildRequires:	perl-Proc-ProcessTable >= 0.40
+BuildRequires:	perl-Unix-Processors >= 2.020
 %endif
 BuildRequires:	rpm-perlprov >= 4.1-13
+Requires:	perl-IPC-Locker >= 1.410
+Requires:	perl-Proc-ProcessTable >= 0.40
+Requires:	perl-Unix-Processors >= 2.020
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -61,7 +65,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc NEWS README
+%doc README
 %{perl_vendorlib}/Schedule/*.pm
 %{perl_vendorlib}/Schedule/Load
 %dir %{perl_vendorlib}/auto/Schedule/Load
