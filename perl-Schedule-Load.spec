@@ -6,7 +6,7 @@
 %define		pdir	Schedule
 %define		pnam	Load
 Summary:	Schedule::Load - load distribution and status across multiple host machines
-Summary(pl):	Schedule::Load - rozk³adanie i badanie obci±¿enia dla wielu maszyn
+Summary(pl.UTF-8):   Schedule::Load - rozkÅ‚adanie i badanie obciÄ…Å¼enia dla wielu maszyn
 Name:		perl-Schedule-Load
 Version:	3.040
 Release:	1
@@ -32,10 +32,10 @@ This package provides useful utilities for load distribution and
 status across multiple machines in a network. To just see what is up
 in the network, see the rschedule or rtop, rloads or rhosts commands.
 
-%description -l pl
-Ten pakiet udostêpnia przydatne narzêdzia do rozk³adania obci±¿enia i
-jego badania na wielu maszynach w sieci. Aby zobaczyæ co siê dzieje w
-sieci, wystarczy popatrzeæ na polecenia rschedule, rtop, rloads i
+%description -l pl.UTF-8
+Ten pakiet udostÄ™pnia przydatne narzÄ™dzia do rozkÅ‚adania obciÄ…Å¼enia i
+jego badania na wielu maszynach w sieci. Aby zobaczyÄ‡ co siÄ™ dzieje w
+sieci, wystarczy popatrzeÄ‡ na polecenia rschedule, rtop, rloads i
 rhosts.
 
 %prep
