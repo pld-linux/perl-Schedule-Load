@@ -6,7 +6,7 @@
 %define		pdir	Schedule
 %define		pnam	Load
 Summary:	Schedule::Load - load distribution and status across multiple host machines
-Summary(pl.UTF-8):   Schedule::Load - rozkładanie i badanie obciążenia dla wielu maszyn
+Summary(pl.UTF-8):	Schedule::Load - rozkładanie i badanie obciążenia dla wielu maszyn
 Name:		perl-Schedule-Load
 Version:	3.040
 Release:	1
