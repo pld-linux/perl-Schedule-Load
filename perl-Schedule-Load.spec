@@ -9,7 +9,7 @@ Summary:	Schedule::Load - load distribution and status across multiple host mach
 Summary(pl.UTF-8):	Schedule::Load - rozkładanie i badanie obciążenia dla wielu maszyn
 Name:		perl-Schedule-Load
 Version:	3.040
-Release:	1
+Release:	2
 License:	GPL or Artistic
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-module/%{pdir}/%{pdir}-%{pnam}-%{version}.tar.gz
