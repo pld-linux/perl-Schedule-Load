@@ -1,10 +1,10 @@
 #
 # Conditional build:
 %bcond_without	tests	# do not perform "make test"
-#
-%include	/usr/lib/rpm/macros.perl
+
 %define		pdir	Schedule
 %define		pnam	Load
+%include	/usr/lib/rpm/macros.perl
 Summary:	Schedule::Load - load distribution and status across multiple host machines
 Summary(pl.UTF-8):	Schedule::Load - rozkładanie i badanie obciążenia dla wielu maszyn
 Name:		perl-Schedule-Load
@@ -14,13 +14,14 @@ License:	GPL or Artistic
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-module/%{pdir}/%{pdir}-%{pnam}-%{version}.tar.gz
 # Source0-md5:	b66fd3df5fcbbcd083eb120ad98f15eb
+URL:		http://search.cpan.org/dist/Schedule-Load/
 BuildRequires:	perl-devel >= 1:5.8.0
+BuildRequires:	rpm-perlprov >= 4.1-13
 %if %{with tests}
 BuildRequires:	perl-IPC-Locker >= 1.410
 BuildRequires:	perl-Proc-ProcessTable >= 0.40
 BuildRequires:	perl-Unix-Processors >= 2.020
 %endif
-BuildRequires:	rpm-perlprov >= 4.1-13
 Requires:	perl-IPC-Locker >= 1.410
 Requires:	perl-Proc-ProcessTable >= 0.40
 Requires:	perl-Unix-Processors >= 2.020
@@ -75,5 +76,5 @@ rm -rf $RPM_BUILD_ROOT
 #%%{perl_vendorlib}/auto/Schedule/Load/Hosts/Host/autosplit.ix
 #%dir %{perl_vendorlib}/auto/Schedule/Load/Hosts/Proc
 #%%{perl_vendorlib}/auto/Schedule/Load/Hosts/Proc/autosplit.ix
-%{_bindir}/*
+%attr(755,root,root) %{_bindir}/*
 %{_mandir}/man?/*
