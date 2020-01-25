@@ -4,7 +4,6 @@
 
 %define		pdir	Schedule
 %define		pnam	Load
-%include	/usr/lib/rpm/macros.perl
 Summary:	Schedule::Load - load distribution and status across multiple host machines
 Summary(pl.UTF-8):	Schedule::Load - rozkładanie i badanie obciążenia dla wielu maszyn
 Name:		perl-Schedule-Load
